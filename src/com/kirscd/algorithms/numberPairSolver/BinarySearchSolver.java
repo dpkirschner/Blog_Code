@@ -4,7 +4,7 @@ import java.util.ArrayList;
 import java.util.Collections;
 
 public class BinarySearchSolver extends NumberPairSolver{
-	//O(n^2) because you are touching every element for every element
+	//O(n * log n) because you are sorting and then doing binary search on result
 	public boolean solve(ArrayList<Integer> numbers, int target) {
 		Collections.sort(numbers);
 		
