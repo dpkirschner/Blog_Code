@@ -13,7 +13,7 @@ public final class LazyInitialization {
 		System.out.println("inside LazyInitialization constructor");
 	}
 	
-	public static LazyInitialization getInstance() {
+	public final static LazyInitialization getInstance() {
 		System.out.println("getting LazyInitialization instance");
 		if(instance == null) {
 			instance = new LazyInitialization();
