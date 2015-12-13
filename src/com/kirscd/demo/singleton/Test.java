@@ -22,7 +22,10 @@ public class Test {
 		System.out.println();
 		System.out.println("EnumInitialization testing.......");
 		IntStream.range(0,3).forEach(n -> {
-			EnumInitialization.INSTANCE.getInstance();
+			EnumInitialization.INSTANCE.doWork();
 		});
+		
+		
+		
 	}
 }

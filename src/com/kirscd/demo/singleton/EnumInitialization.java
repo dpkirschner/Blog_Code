@@ -7,7 +7,7 @@ public enum EnumInitialization {
 		System.out.println("inside EnumInitialization constructor");
 	}
 	
-	public void getInstance() {
+	public void doWork() {
 		System.out.println("getting EnumInitialization instance");
 	}
 }
