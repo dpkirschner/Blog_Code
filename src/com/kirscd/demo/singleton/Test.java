@@ -24,8 +24,5 @@ public class Test {
 		IntStream.range(0,3).forEach(n -> {
 			EnumInitialization.INSTANCE.doWork();
 		});
-		
-		
-		
 	}
 }
