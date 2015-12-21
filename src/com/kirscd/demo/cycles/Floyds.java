@@ -21,13 +21,13 @@ public class Floyds {
 		return recursiveHelper(slow.getNext(), fast.getNext().getNext());
 	}
 	
-	public boolean iterative(Node node) {
+	public static boolean iterative(Node node) {
 		if(node == null) {
 			return false;
 		}
 		
 		Node slow = node;
-		Node fast = node;
+		Node fast = node.getNext();
 		
 		while(true) {
 			if(fast == null || fast.getNext() == null) {
@@ -43,6 +43,7 @@ public class Floyds {
 	}
 	
 	public static void main(String args[]) {
+		System.out.println("Recursive method.................");
 		Node withoutCycle = Node.buildTestChain(false);
 		try {
 			System.out.println("WithoutCycle has a cycle: " + recursive(withoutCycle));
@@ -63,5 +64,24 @@ public class Floyds {
 			e.printStackTrace();
 		}
 		
+		
+		System.out.println("Iterative method.................");
+		try {
+			System.out.println("WithoutCycle has a cycle: " + iterative(withoutCycle));
+			System.out.println("To prove that lets print the list.");
+			Node.printList(withoutCycle);
+			System.out.println();
+		} catch (Exception e) {
+			e.printStackTrace();
+		}
+
+		try {
+			System.out.println("WithCycle has a cycle: " + iterative(withCycle));
+			System.out.println("To prove that lets print the list.");
+			Node.printList(withCycle);
+			System.out.println();
+		} catch (Exception e) {
+			e.printStackTrace();
+		}
 	}
 }
