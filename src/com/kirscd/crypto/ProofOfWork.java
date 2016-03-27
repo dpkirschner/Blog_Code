@@ -10,7 +10,7 @@ public class ProofOfWork {
 	public static String hashAlgorithm = "MD5";
 	public static String BLOCK_DETAILS = "BLOCK#1 : ";
 	public static Character ZERO = '0';
-	public static int BEGINNING_ZEROS = 3;
+	public static int BEGINNING_ZEROS = 4;
 	
 	
 	public static void main(String args[]) throws UnsupportedEncodingException, NoSuchAlgorithmException {
@@ -19,6 +19,7 @@ public class ProofOfWork {
 		String hashValue = hashText(BLOCK_DETAILS, nonce);
 		while(!isProofSolved(hashValue)) {
 			hashValue = hashText(BLOCK_DETAILS, ++nonce);
+			System.out.println(nonce);
 		}
 		
 		System.out.println(String.format("'%s' hashes to %s with a nonce value of %d", BLOCK_DETAILS + nonce, hashValue, nonce));
